@@ -1,0 +1,28 @@
+@using informacion
+@model ProductoViewModel
+
+<h2>Editar Producto</h2>
+<form asp-action="Edit" method="post">
+    <!-- Este input oculto es CLAVE para que el POST sepa qué ID está editando -->
+    <input type="hidden" asp-for="IdProducto" />
+    
+    <div class="mb-3">
+        <label asp-for="Descripcion" class="form-label">Descripción del Producto</label>
+        <input asp-for="Descripcion" class="form-control" />
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Precio" class="form-label">Precio</label>
+        <!-- step="0.01" permite ingresar decimales si el precio es float -->
+        <input asp-for="Precio" type="number" step="0.01" class="form-control" />
+        <span asp-validation-for="Precio" class="text-danger"></span>
+    </div>
+
+    <!-- Resto de tus campos y el botón de submit -->
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
