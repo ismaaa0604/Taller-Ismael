@@ -22,12 +22,12 @@ else
                 <tr>
                     <td>@pelicula.Titulo</td>
                     <td>@pelicula.Anio</td>
-                    <td>@pelicula.Categoria</td>
+                    <td>@pelicula.categoria</td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@producto.idProducto">Modificar</a>
+                        <a asp-action="Edit" asp-route-id="@pelicula.Id">Modificar</a>
                     </td>
                     <td>
-                        <a asp-action="Delete" asp-route-id="@producto.idProducto">Eliminar</a>
+                        <a asp-action="Delete" asp-route-id="@pelicula.Id">Eliminar</a>
                     </td>
                 </tr>
             }

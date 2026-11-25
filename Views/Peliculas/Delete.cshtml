@@ -1,20 +1,21 @@
 @using informacion
-@model Productos
+@model Peliculas
 
-<h2>Eliminar Producto</h2>
-<h4 class="text-danger">¿Estás seguro de que deseas eliminar este producto?</h4>
+<h2>Eliminar Pelicula</h2>
+<h4 class="text-danger">¿Estás seguro de que deseas eliminar este Pelicula?</h4>
 <hr />
 
 <!-- Mostramos los datos sin cajas de texto editables -->
 <div class="mb-4">
-    <p><strong>Descripción:</strong> @Model.descripcion</p>
-    <p><strong>Precio:</strong> $@Model.precio</p>
+    <p><strong>Titulo:</strong> @Model.Titulo</p>
+    <p><strong>Anio:</strong> $@Model.Anio</p>
+    <p><strong>Categoria:</strong> $@Model.categoria</p>
 </div>
 
 <!-- El formulario SOLO envía el ID para confirmar la eliminación -->
 <form asp-action="Delete" method="post">
     <!-- El input oculto envía el ID al [HttpPost] -->
-    <input type="hidden" asp-for="idProducto" />
+    <input type="hidden" asp-for="Id" />
     
     <!-- Botón rojo para eliminar -->
     <button type="submit" class="btn btn-danger">Sí, Eliminar</button>
